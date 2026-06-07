@@ -43,7 +43,7 @@ public class Pelicula {
         return genero;
     }
 
-    public boolean getVista() {
+    public boolean isVista() {
         return vista;
     }
 

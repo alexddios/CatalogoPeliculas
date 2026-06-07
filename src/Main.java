@@ -20,8 +20,9 @@ void main() {
         case 3 -> buscarTitulo();
         case 4 -> buscarGenero();
         case 5 -> marcarVista();
-//        case 6 -> eliminarTitulo();
-//        case 7 -> estadisticas();
+        case 6 -> eliminarTitulo();
+        case 7 -> estadisticas();
+        default -> System.out.println("Opción incorrecta");
     }
 
 }
@@ -207,4 +208,35 @@ public void marcarVista() {
     } else {
         System.out.println("Proceso terminado. No se realizó ninguna modificación.");
     }
+}
+public void eliminarTitulo(){
+    System.out.println("\n--- Eliminar Película por Título ---");
+    listarPeliculas();
+
+    boolean seguir = true;
+    int contadorEliminadas = 0;
+
+    while (seguir){
+        System.out.println("\n-------------------------------------------");
+        String titulo = pedirTexto("Introduce el título: ");
+
+        int filasModificadas = dao.eliminarPorTitulo(titulo);
+
+        if(filasModificadas>0){
+            System.out.println("✅ ¡Película con título " + titulo + " eliminada!");
+            contadorEliminadas++;
+        }else{
+            System.out.println("❌ No se encontró ninguna película con el título " + titulo + ".");
+        }
+        seguir = pedirConfirmacion("\n¿Quieres eliminar otra película? (s/n): ");
+    }
+    System.out.println("\n-------------------------------------------");
+    if (contadorEliminadas > 0) {
+        System.out.println("✅ Proceso terminado. Se han eliminado " + contadorEliminadas + " películas.");
+    } else {
+        System.out.println("Proceso terminado. No se realizó ninguna modificación.");
+    }
+}
+public void estadisticas() {
+    dao.mostrarEstadisticas();
 }
