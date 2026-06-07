@@ -20,7 +20,7 @@ public class PeliculasDAO {
                     director TEXT,
                     anio     INTEGER,
                     genero   TEXT,
-                    vista    INTEGER DEFAULT 0
+                    vista    BOOLEAN DEFAULT FALSE
                 )""";
             conn.createStatement().execute(sql);
         } catch (Exception e) {

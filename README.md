@@ -109,7 +109,7 @@ CREATE TABLE IF NOT EXISTS peliculas (
     director TEXT,
     anio     INTEGER,
     genero   TEXT,
-    vista    INTEGER DEFAULT 0  -- 0 = pendiente, 1 = vista
+    vista    BOOLEAN DEFAULT FALSE  
 );
 ```
 
@@ -138,4 +138,4 @@ CREATE TABLE IF NOT EXISTS peliculas (
 ## 👤 Autor
 
 **Álex De Dios** — Estudiante de 1º DAM  
-[GitHub](https://github.com/alexdedios) · [LinkedIn](https://linkedin.com/in/alexdedios)
+[GitHub](https://github.com/alexddios) · [LinkedIn](https://www.linkedin.com/in/alex-de-dios-pallicer-ab44a5409/)
